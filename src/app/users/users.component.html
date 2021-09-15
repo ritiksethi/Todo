@@ -1,0 +1,24 @@
+<h1>User Data from API</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of jsonData | paginate: { itemsPerPage: 10, currentPage: p }">
+            <th>{{data.userId}}</th>
+            <td>{{data.id}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.body}}</td>
+        </tr>
+        <tr>
+
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
